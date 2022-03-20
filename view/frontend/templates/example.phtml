@@ -1,0 +1,49 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Bondspear\ListingConstructor\Block\Frontend\Data $block */
+?>
+
+<h2><?= $block->escapeHtml('Listing Create Form') ?></h2>
+
+<form class="form"  method="post" data-mage-init='<?= $block->validationRules() ?>' action="<?= $block->actionUrl() ?>">
+    <label for="listing_module" class="form-label">Выбирите модуль (для генерации в нём листинга)</label>
+    <select name="listing_module" id="listing_module" class="form-select" aria-label="Default select example">
+        <?php foreach ($block->listModules() as $module) { ?>
+            <option value="<?= $module ?>"><?= $module ?></option>
+        <?php }?>
+    </select>
+    <div id="passwordHelpBlock" class="form-text">
+        Выбирите свой модуль, для создания в нём елементов LISTING и FORM. Список активных модулей (в него не входят базовые модули ядра Magento2)
+    </div>
+
+
+    <label for="listing_model" class="form-label">Укажите Модель (путь от корня модуля)</label>
+    <input type="text" name="listing_model" class="form-control" aria-describedby="listing_model" placeholder="Пример: \Model\ModelName">
+    <div id="listing_model" class="form-text">
+        Предпологается, что модель существует и принадлежит модулю
+    </div>
+
+
+    <label for="listing_collection" class="form-label">Укажите Коллекцию (путь от корня модуля)</label>
+    <input type="text" name="listing_collection" class="form-control" aria-describedby="listing_collection" placeholder="Пример: \Model\ResourceModel\ModelName\Collection">
+    <div id="listing_collection" class="form-text">
+        Предпологается, что коллекция существует и принадлежит модулю
+    </div>
+
+
+    <label for="listing_db" class="form-label">Укажите имя таблицы бд и имя первичного ключа</label>
+    <input type="text"  name="listing_db" id="listing_db" class="form-control" aria-describedby="listing_db" placeholder="Пример: table_name@primary_key">
+    <div id="listing_db" class="form-text">
+        Предпологается, что таблица существует и указанна верно
+    </div>
+
+
+    <button type="submit" style="background-color: #eb5202;border-color: #eb5202;color: #fff;text-shadow: 1px 1px 0 rgb(0 0 0/25%);">Сгенерировать</button>
+    <div id="listing_db" class="form-text">
+        Предпологается, что будут созданны классы. Если такие уже существуют, они будут пересозданны. Боковое меню по-умолчанию будет в корне.
+    </div>
+</form>

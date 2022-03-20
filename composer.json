@@ -1,0 +1,21 @@
+{
+    "name": "bondspear/listing-constructor",
+    "description": "listing generator",
+    "type": "magento2-module",
+    "license": "NEMA",
+    "authors": [
+        {
+            "name": "Максаров Дмитрий",
+            "email": "bondspear2020@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": {
+            "Bondspear\\ListingConstructor": ""
+        }
+    },
+    "require": {
+        "php": ">=7.2"
+    }
+}
