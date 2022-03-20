@@ -9,11 +9,11 @@
             "email": "bondspear2020@gmail.com"
         }
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "autoload": {
         "files": ["registration.php"],
         "psr-4": {
-            "Bondspear\\ListingConstructor": ""
+            "Bondspear\\ListingConstructor\\": ""
         }
     },
     "require": {
