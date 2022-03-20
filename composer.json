@@ -9,6 +9,7 @@
             "email": "bondspear2020@gmail.com"
         }
     ],
+    "version": "stable",
     "autoload": {
         "files": ["registration.php"],
         "psr-4": {
